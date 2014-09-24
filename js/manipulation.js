@@ -18,7 +18,7 @@ var BackgroundColor = {
 var Index = {
     ARTICLE_HEADING     :   1,
     SECOND_PARAGRAPGH   :   3,
-    INSTRUCTION_HEADING :   7
+    INSTRUCTION_HEADING :   6
 };
 
 window.onload = init;

@@ -6,6 +6,14 @@ var secondParagraphElemNode;
 var instructionHeadElemNode;
 var footerElemNode;
 
+/* Enumeration for shaded yellow colors for different items with which we are interacting. */
+var BackgroundColor = {
+    ARTICLE_HEADING     : "#E4E10B",
+    SECOND_PARAGRAPGH   : "#B8B508",
+    INSTRUCTION_HEADING : "#F7F441",
+    FOOTER              : "#B5B34C"
+}
+
 /* Enumeration for different indeces of HTML tags within section tag. */
 var Index = {
     ARTICLE_HEADING     :   1,
@@ -31,6 +39,9 @@ function stepTwo( ){
 	//this function runs when the user clicks on the Article heading
     console.log("Article Heading has been clicked");
 
+    /* Change the background color of article heading element. */
+    articleHeadElemNode.style.backgroundColor = BackgroundColor.ARTICLE_HEADING;
+
 	//Add listener for mouseover the second paragraph on the page
 	secondParagraphElemNode.onmouseover = stepThree;
 }
@@ -38,6 +49,9 @@ function stepTwo( ){
 function stepThree( ){
 	//this function runs when the user mouses over the second paragraph
     console.log("User mouseover second paragraph");
+
+    /* Change the background color of 2nd paragraph element. */
+    secondParagraphElemNode.style.backgroundColor = BackgroundColor.SECOND_PARAGRAPGH;
 
 	//Add listener for mouseout on the Instructions heading
     instructionHeadElemNode.onmouseout = stepFour;
@@ -47,6 +61,9 @@ function stepFour( ){
 	//this function runs when the user mouses out of the Instructions heading
     console.log("User mouseout of instruction heading");
 
+    /* Change the background color of heading instruction element.*/
+    instructionHeadElemNode.style.backgroundColor = BackgroundColor.INSTRUCTION_HEADING;
+
 	//Add listener for click on the paragraph in the footer
     footerElemNode.onclick = complete;
 }
@@ -54,4 +71,7 @@ function stepFour( ){
 function complete( ){
 	//this runs after the user clicks on the paragraph in the footer
     console.log("footer paragraph has been clicked");
+
+    /* Change background color of footer element*/
+    footerElemNode.style.backgroundColor = BackgroundColor.FOOTER;
 }

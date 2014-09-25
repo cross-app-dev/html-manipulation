@@ -18,7 +18,8 @@ var BackgroundColor = {
 var Index = {
     ARTICLE_HEADING     :   1,
     SECOND_PARAGRAPGH   :   3,
-    INSTRUCTION_HEADING :   6
+    INSTRUCTION_HEADING :   6,
+    PAGE_TITLE          :   0
 };
 
 window.onload = init;
@@ -29,7 +30,7 @@ function init( ){
     articleHeadElemNode = sectionElemNode.children[Index.ARTICLE_HEADING];
     secondParagraphElemNode = sectionElemNode.children[Index.SECOND_PARAGRAPGH];
 	instructionHeadElemNode = sectionElemNode.children[Index.INSTRUCTION_HEADING];
-	footerElemNode = document.querySelector(".footer");
+	footerElemNode = document.querySelector(".footer > p");
 
 	//Add listener for click on the Article Heading
     articleHeadElemNode.onclick = stepTwo;
@@ -74,4 +75,6 @@ function complete( ){
 
     /* Change background color of footer element*/
     footerElemNode.style.backgroundColor = BackgroundColor.FOOTER;
+
+    sectionElemNode.children[Index.PAGE_TITLE].childNodes[0].nodeValue = "Congratulations. Complete.";
 }
